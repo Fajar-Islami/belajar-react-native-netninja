@@ -13,6 +13,7 @@ const ListScrollView = () => {
   ]);
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Latihan List dan ScrollView</Text>
       <ScrollView>
         {people.map((item) => (
           <View key={item.key}>
@@ -34,6 +35,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     // alignItems: 'center',
     // justifyContent: 'center',
+  },
+  title: {
+    fontSize: 40,
+    fontWeight: 'bold',
   },
   item: {
     marginTop: 24,
