@@ -6,7 +6,7 @@ export default function LatTextInput() {
   const [age, setAge] = useState(20);
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Enter name:</Text>
       <TextInput
         multiline
@@ -29,6 +29,12 @@ export default function LatTextInput() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFF',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   input: {
     borderWidth: 1,
     borderColor: '#777',
