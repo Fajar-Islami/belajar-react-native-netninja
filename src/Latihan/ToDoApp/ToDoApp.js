@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import AddTodo from './Component/AddTodo';
 import Header from './Component/Header';
+import Sandbox from './Component/Sandbox';
 import ToDoItem from './Component/ToDoItem';
 
 export default function ToDoApp() {
@@ -57,6 +58,7 @@ export default function ToDoApp() {
         </View>
       </View>
     </TouchableWithoutFeedback>
+    // <Sandbox />
   );
 }
 
@@ -67,8 +69,10 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 40,
+    flex: 1,
   },
   list: {
     marginTop: 20,
+    flex: 1, // supaya bisa discroll sampe bawah
   },
 });
