@@ -10,16 +10,22 @@ import ToDoApp from './src/Latihan/ToDoApp/ToDoApp';
 const App = () => {
   return (
     <>
-      {/* <LatTextInput /> */}
-      {/* <ListScrollView /> */}
-      {/* <LatFlatList /> */}
-      {/* <LatTouchable /> */}
-      <ToDoApp />
-      {/* <Home /> */}
+      <View style={styles.contain}>
+        {/* <LatTextInput /> */}
+        {/* <ListScrollView /> */}
+        {/* <LatFlatList /> */}
+        {/* <LatTouchable /> */}
+        {/* <ToDoApp /> */}
+        <Home />
+      </View>
     </>
   );
 };
 
 export default App;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  contain: {
+    // fontFamily: 'nunito-bold',
+  },
+});
