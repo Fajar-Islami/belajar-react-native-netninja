@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import Home from './src/Latihan/Gamezone/Screen/Home';
 import LatTextInput from './src/Latihan/Lat5-TextInput';
 import ListScrollView from './src/Latihan/Lat6-ListScrollView';
 import LatFlatList from './src/Latihan/Lat7-FlatList';
@@ -13,7 +14,8 @@ const App = () => {
       {/* <ListScrollView /> */}
       {/* <LatFlatList /> */}
       {/* <LatTouchable /> */}
-      <ToDoApp />
+      {/* <ToDoApp /> */}
+      <Home />
     </>
   );
 };
