@@ -11,6 +11,7 @@
     "emulator": "~/Android/Sdk/emulator/emulator -avd Pixel_3a_API_30_x86"
   },
   "dependencies": {
+    "expo-cli": "^4.0.17",
     "react": "16.13.1",
     "react-native": "0.63.4"
   },

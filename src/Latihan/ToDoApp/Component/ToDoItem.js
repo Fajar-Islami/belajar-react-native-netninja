@@ -1,10 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+// import {AntDesign} from '@expo/vector-icons';
 
 const ToDoItem = ({item, pressHandler}) => {
   return (
     <TouchableOpacity onPress={() => pressHandler(item.key)}>
-      <Text style={styles.item}>{item.text}</Text>
+      <View style={styles.item}>
+        {/* <AntDesign name="delete" size={18} color="#333" /> */}
+        <Text style={styles.itemsText}>{item.text}</Text>
+      </View>
     </TouchableOpacity>
   );
 };
@@ -18,7 +22,10 @@ const styles = StyleSheet.create({
     borderColor: '#bbb',
     borderWidth: 1,
     borderStyle: 'dashed',
-    borderRadius: 1,
     borderRadius: 10,
+    flexDirection: 'row',
+  },
+  itemsText: {
+    marginLeft: 10,
   },
 });
