@@ -14,8 +14,8 @@ const App = () => {
       {/* <ListScrollView /> */}
       {/* <LatFlatList /> */}
       {/* <LatTouchable /> */}
-      {/* <ToDoApp /> */}
-      <Home />
+      <ToDoApp />
+      {/* <Home /> */}
     </>
   );
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-// import {AntDesign} from '@expo/vector-icons';
+import {Container, Header, Content, Icon} from 'native-base';
 
 const ToDoItem = ({item, pressHandler}) => {
   return (
     <TouchableOpacity onPress={() => pressHandler(item.key)}>
       <View style={styles.item}>
-        {/* <AntDesign name="delete" size={18} color="#333" /> */}
+        <Icon name="delete" type="MaterialCommunityIcons" />
         <Text style={styles.itemsText}>{item.text}</Text>
       </View>
     </TouchableOpacity>
