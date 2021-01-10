@@ -1,6 +1,6 @@
 import {Icon} from 'native-base';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
 
 const Header = ({navigation, title}) => {
   const openMenu = () => {
@@ -8,7 +8,9 @@ const Header = ({navigation, title}) => {
   };
 
   return (
-    <View style={styles.header}>
+    <ImageBackground
+      source={require('../../../../assets/game_bg.png')}
+      style={styles.header}>
       <Icon
         type="MaterialIcons"
         fontSize={28}
@@ -16,10 +18,14 @@ const Header = ({navigation, title}) => {
         style={styles.icon}
         onPress={openMenu}
       />
-      <View>
+      <View style={styles.headerTitle}>
+        <Image
+          source={require('../../../../assets/heart_logo.png')}
+          style={styles.headerImage}
+        />
         <Text style={styles.headerText}>{title}</Text>
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
@@ -42,5 +48,13 @@ const styles = StyleSheet.create({
   icon: {
     position: 'absolute',
     left: 0,
+  },
+  headerTitle: {
+    flexDirection: 'row',
+  },
+  headerImage: {
+    height: 26,
+    width: 26,
+    marginHorizontal: 10,
   },
 });

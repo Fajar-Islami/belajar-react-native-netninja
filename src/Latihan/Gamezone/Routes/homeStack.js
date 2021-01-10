@@ -12,7 +12,6 @@ export const HomeStack = () => {
       initialRouteName="Home"
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#eee',
           height: 60,
         },
         headerTintColor: '#444', // warna text
