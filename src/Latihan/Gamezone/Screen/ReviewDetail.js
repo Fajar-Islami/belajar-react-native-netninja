@@ -1,7 +1,7 @@
 import {Text, Card, CardItem, Body} from 'native-base';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {globalStyles} from '../../../../styles/global';
+import {StyleSheet, View, Image} from 'react-native';
+import {globalStyles, images} from '../../../../styles/global';
 
 export default function ReviewDetails({route}) {
   const item = route.params;
@@ -19,7 +19,10 @@ export default function ReviewDetails({route}) {
           </Body>
         </CardItem>
         <CardItem footer>
-          <Text>{item.rating}</Text>
+          <View style={styles.rating}>
+            <Text>Gamezone rating:</Text>
+            <Image source={images.ratings[item.rating]} />
+          </View>
         </CardItem>
       </Card>
     </View>
@@ -27,7 +30,13 @@ export default function ReviewDetails({route}) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 24,
+  rating: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    // paddingTop: 16,
+    // marginTop: 16,
+    width: '100%',
+    borderTopWidth: 1,
+    borderTopColor: '#eee',
   },
 });
