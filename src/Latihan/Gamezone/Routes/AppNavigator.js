@@ -8,9 +8,29 @@ const Stack = createStackNavigator();
 
 const HomeNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Review" component={ReviewDetails} />
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#eee',
+          height: 60,
+        },
+        headerTintColor: '#444', // warna text
+      }}>
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          title: 'Gamezone',
+        }}
+      />
+      <Stack.Screen
+        name="Review"
+        component={ReviewDetails}
+        options={{
+          title: 'Review Details',
+        }}
+      />
     </Stack.Navigator>
   );
 };
