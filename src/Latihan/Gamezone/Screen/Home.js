@@ -1,4 +1,4 @@
-import {List, ListItem, Text} from 'native-base';
+import {List, ListItem, Text, Card, CardItem, Body} from 'native-base';
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {globalStyles} from '../../../../styles/global';
@@ -25,10 +25,11 @@ export default function Home({navigation}) {
       <List
         dataArray={reviews}
         renderRow={(item) => (
-          <ListItem onPress={() => navigation.navigate('Review', item)}>
-            {/* Param kedua kirim data */}
-            <Text style={globalStyles.titleText}>{item.title}</Text>
-          </ListItem>
+          <Card>
+            <ListItem onPress={() => navigation.navigate('Review', item)}>
+              <Text style={globalStyles.titleText}>{item.title}</Text>
+            </ListItem>
+          </Card>
         )}
       />
     </View>
