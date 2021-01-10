@@ -10,26 +10,15 @@ const HomeNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="ReviewDetails" component={ReviewDetails} />
+      <Stack.Screen name="Review" component={ReviewDetails} />
     </Stack.Navigator>
   );
 };
 
-// export default AppNavigator = () => {
-//   return (
-//     <NavigationContainer>
-//       <HomeNavigator />
-//     </NavigationContainer>
-//   );
-// };
-
-export default function AppNavigator() {
+export default AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Details" component={ReviewDetails} />
-      </Stack.Navigator>
+      <HomeNavigator />
     </NavigationContainer>
   );
-}
+};
