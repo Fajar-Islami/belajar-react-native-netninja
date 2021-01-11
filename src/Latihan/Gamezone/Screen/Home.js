@@ -2,6 +2,7 @@ import {List, ListItem, Text, Card, CardItem, Body, Icon} from 'native-base';
 import React, {useState} from 'react';
 import {StyleSheet, View, Modal} from 'react-native';
 import {globalStyles} from '../../../../styles/global';
+import ReviewForm from './ReviewForm';
 
 export default function Home({navigation}) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -32,7 +33,7 @@ export default function Home({navigation}) {
             style={{...styles.modalToggle, ...styles.modalClose}}
             onPress={() => setModalOpen(false)}
           />
-          <Text>Hello from modal</Text>
+          <ReviewForm />
         </View>
       </Modal>
 
