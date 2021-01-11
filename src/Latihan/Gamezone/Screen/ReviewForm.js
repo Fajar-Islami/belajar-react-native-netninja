@@ -2,6 +2,20 @@ import React from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
 import {globalStyles} from '../../../../styles/global';
 import {Formik} from 'formik';
+import * as yup from 'yup';
+
+// Untuk validasi
+const ReviewSchema = yup.object({
+  title: yup.string().required().min(4), // harus string,required dan min 4
+  body: yup.string().required().min(8), // harus string,required dan min 8
+  rating: yup
+    .string() // semua yang dinput form itu string, jadi perlu parseInt
+    .required()
+    .test('is-num-1-5', 'Rating must be a number 1-5', (val) => {
+      return parseInt(val) < 6 && parseInt(val) > 0;
+    }), // harus string,required dan min 4
+  // test('nama test'.'feedback msg',function)
+});
 
 export default function ReviewForm({addReview}) {
   return (
@@ -10,9 +24,11 @@ export default function ReviewForm({addReview}) {
         initialValues={{title: '', body: '', rating: ''}}
         onSubmit={(val, actions) => {
           console.log(val);
-          addReview(val);
           actions.resetForm(); // untk reset form
-        }}>
+          addReview(val);
+        }}
+        validationSchema={ReviewSchema} // untuk validasi
+      >
         {(props) => (
           <View>
             <TextInput
