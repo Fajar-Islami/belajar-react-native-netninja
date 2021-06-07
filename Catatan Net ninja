@@ -1,0 +1,278 @@
+Net ninja
+Video 1 
+
+
+////////////////////////////////////////
+Video 2
+
+
+////////////////////////////////////////
+Video 3
+tag view itu seperti div, untuk wrap elemen seperti div
+tag text = untuk menampung text, kalau text tanpa tag text gk bisa
+
+text inherit dari text juga
+
+////////////////////////////////////////
+Video 4
+
+dinative, tag button itu tag tunggal
+tag button di native tidak bisa pakai style jadi dibungkus view
+
+////////////////////////////////////////
+Video 5
+
+<TextInput
+        style={styles.input}
+        placeholder="e.g Fajar"
+        onChangeText={(val) => setName(val)}
+      />
+      
+multiline = supaya bisa di enter input textnya
+keyboardType='numeric'= agar keyboard hanya muncul angka
+
+////////////////////////////////////////
+Video 7 Flatlist
+cara mudah untuk map, tidak perlu scrollview, otomatis membaca key, lebih bagus juga dengan perfromance. jika bayak data, maka tidak semua langsung di load. kalau hanya sedikit boleh list scroll view dan map. kalau tidak ada key di data, maka tambahkan params  keyExtractor={(item) => item.id}
+ numColumns={2} untuk pecah data kedalam kolom
+ 
+////////////////////////////////////////
+Video 8
+ setPeople((orangSekarang) => {
+      return orangSekarang.filter((person) => person.id != id);
+    });
+    
+fungsinya otomatis membaca state dia saat ini
+
+
+////////////////////////////////////////
+Video 10
+ToDoApp
+kalau mau kirim param dari child ke parent, buat dlu fungsi diparent
+jadi fungsi nya itu dikirim ke child, pas di child dimasukin key nya
+
+
+////////////////////////////////////////
+Video 11
+ToDoApp
+mengirim text dari child ke parent lagi, caranya buat fucntion dlu di parent
+
+
+////////////////////////////////////////
+Video 12 alert
+Alert.alert('OOPS', 'Todo Must be over 3 chars long', [
+        {text: 'Understood', onPress: () => console.log('alert closed')},
+      ]);
+Param 1: Judul alert
+Param 2: Isi alert
+Param 3: array untuk button close alert
+
+
+////////////////////////////////////////
+Video 13 menghilangkan keyboard
+caranya wrap semua komponen dengan
+<TouchableWithoutFeedback
+      onPress={() => {
+        Keyboard.dismiss();
+        console.log('dismiss keyboard');
+      }}>
+      
+      
+////////////////////////////////////////
+Video 14 Flexbox basics
+dengan Flatlist ada item yang tenggelam, maka ditangani dengan flexbox
+
+tag View secara otomatis mempunyai flexbox didalamnya
+flex 1 memakai semua space yg ada
+
+flexDirection
+coloumn, main axis column
+row, cross axis column
+
+alingitems berdasarkan tinggi yang lain
+
+flex 1,2,3,4 itu dijmlah seperti col pada bootstrap
+1/4,2/4,3/4,4/4
+
+      
+////////////////////////////////////////
+Video 15 expo icon
+npm install --global expo-cli
+icon dari expo
+
+      
+////////////////////////////////////////
+Video 16
+untuk navigasi di native butuh pihak ke3
+
+
+////////////////////////////////////////
+Video 17 custom fonts
+https://medium.com/@mehrankhandev/ultimate-guide-to-use-custom-fonts-in-react-native-77fcdf859cf4
+1. download fonts dari gugel
+2. buat folder assets/fonts/ lalu masukan font tdi kesini
+3. Create File “react-native.config.js” and add following code
+4. lalu jalankan perintah 
+	react-native link
+5. lalu gunakan fonts, contoh
+ titleText: {
+    fontFamily: 'Nunito-Bold',
+    fontSize: 18,
+    color: '#333',
+  },
+
+////////////////////////////////////////
+Video 18 global style
+1. buat folder styles pada root
+2. buat file global.js
+3. masukan style untuk global
+import {StyleSheet} from 'react-native';
+
+export const globalStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+  titleText: {
+    fontFamily: 'Nunito-Bold',
+    fontSize: 18,
+    color: '#333',
+  },
+  paragraph: {
+    marginVertical: 8,
+    lineHeight: 20,
+  },
+});
+
+
+
+////////////////////////////////////////
+Video 19 navigation
+di mobile namanya stack navigation, jadi perlu desain app secara hati2
+https://reactnavigation.org/docs/getting-started
+install
+1. npm install @react-navigation/native
+2. npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+
+////////////////////////////////////////
+Video 20 stack navigator
+pembuatan routes
+
+
+////////////////////////////////////////
+Video 21 navigating around
+ketika membuat navigate, otomatis ada tombol back di screen
+back ke halaman utama
+
+ada 2 method
+navigation.navigate('Review');
+navigation.push('Review');
+
+setiap komponen yang ditarok di stack navigator, otomatis ada props.navigation
+
+////////////////////////////////////////
+Video 22 passing data pada navigation
+https://reactnavigation.org/docs/params
+
+  <ListItem onPress={() => navigation.navigate('Review', item)}>
+      {/* Param kedua kirim data */}
+
+untuk menerima data pakai route
+const item = route.params;
+
+
+////////////////////////////////////////
+Video 23 ubah nama header
+https://reactnavigation.org/docs/headers
+
+<Stack.Screen name="Home" component={Home} options={{title: 'Gamezone'}} />
+
+untuk styling yang sama disemua navbar, tarok di navigator, contoh
+ <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#eee',
+          height: 60,
+        },
+        headerTintColor: '#444', // warna text
+      }}>
+
+////////////////////////////////////////
+Video 24 drawer navigation
+
+menambahkan sidebar
+ada 2 tipe navigation
+1. stack navigation
+2. drawer navigator
+
+drawer navigator tidak otomatis memunculkan header seperti homestack, adanya burger menu
+
+jadi stack ditarok dalam drawer navigator (3.20)
+
+untuk bisa menggunakan drawer install
+npm install @react-navigation/drawer
+
+container nya tarok disini supaya gampang
+
+
+////////////////////////////////////////
+Video 25 header component
+
+option:{headerTitle: .... } ==> bisa nerima komponen
+headerTitle adalah properti yang dikhususkan untuk stack navigator, headerTitle defaultnya adalah komponen Teks yang menampilkan judul.
+
+
+header.js tidak bisa pakai props navigation, karena tidak didefinisi di stack navigator.jadi harus dikirim dlu dari homestack dan aboustack
+
+////////////////////////////////////////
+Video 27
+ketika source pada image require tidak dinamik, jadi perlu dibuat function spt di  globalstyles
+
+////////////////////////////////////////
+Video 28 background image header
+menggunakan komponen dari react native
+
+
+////////////////////////////////////////
+Video 29 modal
+cara agar bisa pakai 2 style distructure
+style={{....styles.modalToggle,...styles.modalClose}}
+
+////////////////////////////////////////
+Video 30 formik
+https://formik.org/docs/overview
+memudahkan membuat from, track value tanpa state, validasi input
+
+ npm install formik --save
+reviewform.js
+
+
+////////////////////////////////////////
+Video 31 submit form
+
+<TouchableWithoutFeedback onPress={Keyboard.dismiss} >  == supaya keybord ditutup
+
+tanpa () agar tidak berjalan otomatis
+
+
+////////////////////////////////////////
+Video 32 validation
+npm install yup
+semua yang dinput form itu string
+ReviewForm.js
+
+
+////////////////////////////////////////
+Video 33
+
+<Text style={globalStyles.errorText}>{props.touched.title && props.errors.body} </Text>
+ketika textinput field sudah diklik baru error muncul
+
+onBlur = real time validation, ketika textinput sudah diklik
+
+
+////////////////////////////////////////
+Video 35
+minHeight agar bisa enter banyak input
